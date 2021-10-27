@@ -1,20 +1,31 @@
 
 const slider = document.querySelector('.slider');
 const item = document.getElementsByClassName('item');
-// const next = document.querySelector('.next');
+const itemSmall = document.getElementsByClassName('small-item')
+console.log(item[4])
 
 let contatore=0;
 
 const next = document.querySelector('.uarr');
 const prev = document.querySelector('.darr');
-next.addEventListener("click", function(){
-
+prev.addEventListener("click", function(){
+  item[contatore].classList.remove('active');
+  itemSmall[contatore].classList.remove('small-active');
   contatore++;
-  console.log(contatore);
+  if (contatore>item.length-1){
+    contatore=0;
+  }
+  item[contatore].classList.add('active');
+  itemSmall[contatore].classList.add('small-active');
 });
 
-prev.addEventListener("click", function(){
-  
+next.addEventListener("click", function(){
+  item[contatore].classList.remove('active');
+  itemSmall[contatore].classList.remove('small-active');
   contatore--;
-  console.log(contatore);
+  if (contatore<0){
+    contatore=item.length-1;
+  }
+  item[contatore].classList.add('active'); 
+  itemSmall[contatore].classList.add('small-active'); 
 });
