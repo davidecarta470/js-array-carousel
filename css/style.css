@@ -22,13 +22,14 @@
   right:10%;
   color:white;
   display: inline-block;
-  max-width: 80%;
+  max-width: 70%;
 }
 h1{
   text-align: end;
 }
 p{
   font-size: 20px;
+  text-align: justify;
 }
 .uarr{
   top:0%;
